@@ -17,14 +17,7 @@ end
 
 def max_2_sum(array)
 #   # YOUR CODE HERE
-  a = array.sort.reverse
-    if a.length == 0
-        puts 0
-    elsif a.length == 1
-        puts a[0]
-    else 
-    puts a[0]+a[1]
-    end
+  return array.max(2).inject(0, :+)
 end
 
 def sum_to_n?(array, n)
@@ -45,12 +38,16 @@ end
 
 def hello(name)
 #   # YOUR CODE HERE
-  return "Hello " + name
+  "Hello, " + name
 end
 
 def starts_with_consonant?(s)
 #   # YOUR CODE HERE
-  c = 'bcdfghjklmnpqrstvwxyz'
+  if s.length == 0
+    return false
+  end
+  
+  c = 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ'
     if c.include?(s[0]) 
         return true
     else
@@ -79,4 +76,5 @@ class BookInStock
     "$"+sprintf('%.2f', @price)
   end
 end
+
 
